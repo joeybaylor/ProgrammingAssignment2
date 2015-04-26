@@ -1,13 +1,12 @@
-
 ##The following functions are being submitted for Programming Assignment 2: Lexical Scoping
 
 ##This function creates a special matrix object that can cache its inverse
-##I took the makeVector function provided as the assignment example and modified 
-##the code to calculate the inverse for a matrix
+##I took the makeVector function provided in the assignment instructions and modified 
+##the code to create a special "matrix"
 
 makeCacheMatrix <- function(x=matrix()) {
         m <- NULL
-        set <- function(y) {
+        set <- function(y) {                          
                 x <<- y
                 m <<- NULL
         }
@@ -20,7 +19,9 @@ makeCacheMatrix <- function(x=matrix()) {
         
 }
 
-## Write a short comment describing this function
+##The following function calculates the inverse of the special "matrix" created above
+##I took the cachemean provided in the assignment instructions and modified the code to
+##to calculate the inverse instead of the mean
 
 cacheSolve <- function(x, ...) {
         m <- x$getinverse()                     
@@ -33,15 +34,6 @@ cacheSolve <- function(x, ...) {
         x$setinverse(m)
         m
 }
-
-
-
-
-
-
-
-
-
 
 
 
